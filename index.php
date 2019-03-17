@@ -10,6 +10,17 @@ $logFileDir = '/home/sites/site32/logs/';
 $output = '<h1>Manitu Log File Analyser</h1>'."\n";
 $logFileString = '';
 
+$header = '<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manitu Log File Analyser</title>
+  </head>
+  <body>';
+
+$footer = '  </body>
+</html>';
 
 if(file_exists($logFileDir.$logFile)) {
 	$logFileString = file_get_contents($logFileDir.$logFile);
@@ -25,4 +36,6 @@ if(file_exists($logFileDir.$logFile)) {
 	$output .= "</li>\n</ul>";
 }
 
+echo $header;
 echo $output;
+echo $footer;
